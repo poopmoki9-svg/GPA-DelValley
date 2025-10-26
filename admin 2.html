@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Global Psionic Association</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header dashboard-header">
+      <div class="logo">
+        <h1>Global Psionic Association</h1>
+        <span>Admin Dashboard</span>
+      </div>
+      <button id="logoutButton" class="logout-button">Logout</button>
+    </header>
+
+    <main class="main admin-dashboard">
+      <div class="container-inner">
+        <h2 class="section-title">Recent Member Applications</h2>
+        <p class="section-subtitle">Displaying applications submitted within the last 365 days.</p>
+        
+        <div class="dashboard-content">
+          <div id="memberTableContainer">
+            <table class="member-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Full Name</th>
+                  <th>Email</th>
+                  <th>Application Date</th>
+                  <th>Psionic Interests</th>
+                </tr>
+              </thead>
+              <tbody id="memberTableBody">
+                <!-- Member data will be loaded here -->
+              </tbody>
+            </table>
+            <p id="noEntriesMessage" class="no-entries" style="display: none;">No recent member applications found.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container-inner">
+        <p>&copy; 2025 Global Psionic Association. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

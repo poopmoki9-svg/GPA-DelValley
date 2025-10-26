@@ -1,0 +1,220 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #8844ee 0%, #5522aa 100%);
+  --primary-color: #8844ee;
+  --secondary-color: #5522aa;
+  --text-color: #333;
+  --light-text-color: #666;
+  --background-color: #f0f2f5;
+  --card-background: rgba(255, 255, 255, 0.95);
+  --header-background: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 25px rgba(136, 68, 238, 0.3);
+  --shadow-heavy: 0 15px 50px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+/* Inherit base styles from styles.css */
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: var(--primary-gradient);
+  background-attachment: fixed;
+}
+
+.container {
+  background: var(--card-background);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--header-background);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-header .logo h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard-header .logo span {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--light-text-color);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background var(--transition-speed) ease;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* Dashboard Content Area */
+.admin-dashboard {
+  padding: 3rem 0;
+}
+
+.dashboard-content {
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-heavy);
+  backdrop-filter: blur(5px);
+  margin-top: 2rem;
+  overflow-x: auto; /* Enable horizontal scrolling for tables on small screens */
+}
+
+.dashboard-content h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.member-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.member-table th, 
+.member-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  white-space: nowrap; /* Prevent text wrapping in table cells */
+}
+
+.member-table th {
+  background: rgba(136, 68, 238, 0.05);
+  font-weight: 700;
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.member-table td {
+  color: var(--light-text-color);
+}
+
+.member-table tr:last-child td {
+  border-bottom: none;
+}
+
+.no-entries {
+  text-align: center;
+  color: var(--light-text-color);
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive Adjustments for Dashboard */
+@media (max-width: 1024px) {
+  .dashboard-header {
+    padding: 1rem;
+  }
+  .container-inner {
+    padding: 0 1rem;
+  }
+  .admin-dashboard {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dashboard-header .logo {
+    margin-bottom: 1rem;
+  }
+  .dashboard-content {
+    padding: 1.5rem;
+  }
+  .member-table th,
+  .member-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+  .logout-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .member-table th,
+  .member-table td {
+    padding: 0.6rem;
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .dashboard-header {
+    background: var(--header-background);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .dashboard-header .logo span {
+    color: #ccc;
+  }
+  .logout-button {
+    background-color: #e74c3c;
+    color: white;
+  }
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  .dashboard-content {
+    background: var(--card-background);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+  }
+  .member-table th {
+    background: rgba(136, 68, 238, 0.1);
+    color: #eee;
+  }
+  .member-table td {
+    border-bottom: 1px solid #444;
+    color: #ccc;
+  }
+  .no-entries {
+    color: #ccc;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Psionic Association - Membership Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <h1>Global Psionic Association</h1>
+      </div>
+      <nav class="nav">
+        <a href="#register" class="nav-link">Register</a>
+        <a href="#admin-login" class="nav-link">Admin Login</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main class="main">
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h2 class="hero-title">Join the Global Psionic Association</h2>
+          <p class="hero-description">Unlock your potential and connect with like-minded individuals. Register today to begin your journey.</p>
+          <a href="#register" class="cta-button">Apply Now</a>
+        </div>
+      </section>
+
+      <section class="registration-section" id="register">
+        <div class="container-inner">
+          <h2 class="section-title">New Member Registration</h2>
+          <p class="section-subtitle">Please fill out the form below to apply for membership. You will receive an email within 12-48 hours with further instructions and questions about your desired role.</p>
+          <form id="registrationForm" class="registration-form">
+            <div class="form-group">
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" name="name" required placeholder="Your Full Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+            <div class="form-group">
+              <label for="psionicInterests">Psionic Interests/Abilities (Optional):</label>
+              <textarea id="psionicInterests" name="psionicInterests" rows="4" placeholder="Describe your psionic interests or abilities..."></textarea>
+            </div>
+            <button type="submit" class="cta-button">Submit Application</button>
+          </form>
+          <div id="formMessage" class="form-message"></div>
+        </div>
+      </section>
+
+      <section class="admin-login-section" id="admin-login">
+        <div class="container-inner">
+          <h2 class="section-title">Admin Login</h2>
+          <p class="section-subtitle">Access the administrator dashboard to manage member applications.</p>
+          <form id="adminLoginForm" class="admin-login-form">
+            <div class="form-group">
+              <label for="adminEmail">Email:</label>
+              <input type="email" id="adminEmail" name="adminEmail" required placeholder="admin@example.com">
+            </div>
+            <div class="form-group">
+              <label for="adminPassword">Password:</label>
+              <input type="password" id="adminPassword" name="adminPassword" required placeholder="********">
+            </div>
+            <button type="submit" class="cta-button">Login to Dashboard</button>
+          </form>
+          <div id="adminMessage" class="form-message"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container-inner">
+        <p>&copy; 2025 Global Psionic Association. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
